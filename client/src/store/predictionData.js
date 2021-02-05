@@ -22,7 +22,7 @@ export default {
         predictionData = await api.getPrediction(imageData)
       } catch (error) {
         const errorMessage = `An error as occured : ${error.message}` // eslint-disable-line no-irregular-whitespace
-        // console.log(errorMessage)
+        console.log(errorMessage)
         predictionData = ''
       }
       commit('getPrediction', predictionData)
