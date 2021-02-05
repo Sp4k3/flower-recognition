@@ -1,11 +1,13 @@
 <template>
   <div>
+    <Header />
     <div>
       <img
         alt="Vue logo"
         src="./assets/logo.png"
         width="100"
         height="100"
+        class="logo"
       >
     </div>
     <!-- <router-link to="/">
@@ -22,7 +24,14 @@
   </div>
 </template>
 
-<script setup>
+<script>
+import Header from './components/Header.vue'
+export default {
+  components: {
+    Header,
+  },
+  // ...
+}
 </script>
 
 <style>
@@ -32,10 +41,14 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
 }
 
 .button {
   margin: 10px;
+}
+
+.logo {
+  border-radius: 50%;
 }
 </style>

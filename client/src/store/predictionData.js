@@ -10,7 +10,7 @@ export default {
     getPrediction (state, predictionData) {
       // console.log(predictionData)
       state.prediction = predictionData.prediction
-      state.scores = predictionData.scores
+      state.scores = Object.keys(predictionData.scores).map((key) => [(key), predictionData.scores[key]])
     },
   },
 
