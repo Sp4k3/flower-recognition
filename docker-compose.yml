@@ -1,0 +1,38 @@
+version: '3.5'
+
+services:
+  ##########################
+  # Setup server container #   
+  ##########################
+  server:
+    build: ./server
+    ports: 
+      - ${SERVER_PORT:-4000}:${SERVER_PORT:-4000}
+    volumes:
+      - ./server:/app
+      - ./flower_photos:/app/flower_photos
+    restart: on-failure
+    command: npm run dev   
+    networks:
+      - ia-network
+
+  ##########################
+  # Setup client container #  
+  ##########################
+  client:
+    build: ./client
+    ports: 
+      - ${CLIENT_PORT:-8080}:${CLIENT_PORT:-8080}
+    depends_on: 
+      - server
+    volumes:
+      - ./client:/app
+    command: npm start
+    networks:
+      - ia-network
+
+networks:
+  ia-network:
+    driver: bridge
+    # driver_opts:
+      # com.docker.network.driver.mtu: 1450

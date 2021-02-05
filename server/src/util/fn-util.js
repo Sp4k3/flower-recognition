@@ -1,5 +1,5 @@
-const fs = require('fs').promises
-const path = require('path')
+import * as fs from 'fs'
+import path from 'path'
 
 // Shuffle an array
 export const shuffle = (arr) => arr.sort(() => Math.random() - 0.5)
@@ -19,8 +19,3 @@ export const walk = async (dir) => {
     }))
   return files.reduce((all, folderContents) => all.concat(folderContents), [])
 }
-
-// module.exports = {
-//   shuffle,
-//   walk,
-// }

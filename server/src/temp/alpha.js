@@ -1,13 +1,7 @@
-// const fs = require('fs')
-// const tf = require('@tensorflow/tfjs-node')
-// // const tf = require('@tensorflow/tfjs-node-gpu')
-// const shuffle = require('../utils/fn-utils.js').shuffle
-// const walk = require('../utils/fn-utils.js').walk
-import fs from 'fs'
+import fs from 'fs/promises'
 import tf from '@tensorflow/tfjs-node'
 // import tf from '@tensorflow/tfjs-node-gpu'
-import shuffle from '../utils/fn-utils.js'
-import walk from '../utils/fn-utils.js'
+import { shuffle, walk } from '../util/fn-util.js'
 
 const trainFaction = 0.8
 

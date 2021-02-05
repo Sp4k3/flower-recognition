@@ -1,6 +1,4 @@
-// const fs = require('fs')
-// const tf = require('@tensorflow/tfjs-node')
-import fs from 'fs'
+import fs from 'fs/promises'
 import tf from '@tensorflow/tfjs-node'
 
 const labels = ['daisy', 'dandelion', 'rose', 'sunflower', 'tulip']
