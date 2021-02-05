@@ -12,6 +12,7 @@ RUN npm install
 COPY ./src ./src
 COPY ./images ./images
 COPY ./flower_models ./flower_models
+COPY ./flower_photos ./flower_photos
 
 # Set the command when container start running
 CMD [ "npm", "run", "dev" ]
