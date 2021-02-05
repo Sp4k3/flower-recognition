@@ -12,6 +12,12 @@ export default {
       state.prediction = predictionData.prediction
       state.scores = Object.keys(predictionData.scores).map((key) => [(key), predictionData.scores[key]])
     },
+
+    trainModel (state) {
+      console.log('Model trained')
+      // state.prediction = predictionData.prediction
+      // state.scores = predictionData.scores
+    },
   },
 
   actions: {
@@ -26,6 +32,16 @@ export default {
         predictionData = ''
       }
       commit('getPrediction', predictionData)
+    },
+
+    async trainModel ({ commit, dispatch }) {
+      try {
+        await api.trainModel()
+      } catch (error) {
+        const errorMessage = `An error as occured : ${error.message}` // eslint-disable-line no-irregular-whitespace
+        console.log(errorMessage)
+      }
+      commit('getPrediction')
     },
   },
 }

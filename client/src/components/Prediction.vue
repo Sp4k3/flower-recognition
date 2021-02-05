@@ -52,8 +52,6 @@ export default {
       const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png']
       file.value = event.target.files[0]
       tempBuffer.value = file.value.slice()
-      // console.log(file.value)
-      // console.log(preview.value)
       if (!allowedTypes.includes(file.value.type)) {
         message.value = 'Filetype is wrong!!'
       }
@@ -71,14 +69,12 @@ export default {
 
     const sendImage = async () => {
       const formData = new FormData()
-      // console.log('send : ', tempBuffer.value)
       formData.append('file', tempBuffer.value)
-      // console.log(formData)
       try {
         await store.dispatch('getPrediction', formData)
         message.value = 'Uploaded!!'
       } catch (err) {
-        // console.log(err)
+        console.log(err)
         message.value = err.response
       }
     }

@@ -7,7 +7,7 @@
     </router-link>
     <router-link to="/about">
       <a>
-        Go to About
+        Go to Train
       </a>
     </router-link>
   </div>

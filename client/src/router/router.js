@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
 const Prediction = () => import('../components/Prediction.vue')
-const About = () => import('../components/About.vue')
+const TrainModel = () => import('../components/TrainModel.vue')
 
 const routes = [
   {
@@ -10,9 +10,9 @@ const routes = [
     component: Prediction,
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About,
+    path: '/trainModel',
+    name: 'TrainModel',
+    component: TrainModel,
   },
 ]
 

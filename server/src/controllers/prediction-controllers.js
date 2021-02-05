@@ -1,11 +1,11 @@
 import { techLogger } from '../util/logger.js'
-import { runPrediction } from '../util/ai-util.js'
+import { runPrediction, runTraining } from '../util/ai-util.js'
 
-export const getExampleController = async (req, res) => {
+export const trainModelController = async (req, res) => {
   try {
-    const predictionData = await runPrediction()
+    await runTraining()
     res.status(200).json({
-      predictionData,
+      // predictionData,
       success: true,
     })
   } catch (error) {
